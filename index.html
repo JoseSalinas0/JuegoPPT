@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="ppt.js"></script>
+    <div style="text-align: center; margin-top: 20px;">
+    <h1>JUEGO P/P/T</h1>
+    <script>
+        inicio();
+    </script>
+    <button id="piedra" style="width: 300px; height: 300px; background-image:url(piedra.png);"></button>
+    <button id="papel" style="width: 280px; height: 300px; background-image:url(papel.png);"></button>
+    <button id="tijera" style="width: 240px; height: 300px; background-image:url(tijeras.png);"></button>
+    <br>
+    <p>Tu opcion:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La opcion del bot:</p>
+    <img src="blanco.png" id="blanco1" alt="ppt" style="width: 300px; height: 300px;">
+    <img src="blanco.png" id="blanco2" alt="ppt" style="width: 300px; height: 300px;">
+    <script>
+        mensaje();
+    </script>
+    </div>
+</body>
+<script>
+
+    i1=document.getElementById('piedra');
+    i2=document.getElementById('papel');
+    i3=document.getElementById('tijera');
+    let j=0, b=0;
+    i1.addEventListener('click',function(){
+        j=1;
+        b=Math.floor(Math.random()*(3)+1);
+        document.getElementById('blanco1').src="piedra.png";
+        bot(b);
+        setTimeout(function(){
+            comparar(j,b);   
+        }, 100); 
+        setTimeout(function(){
+            
+        }, 100);
+    });
+    i2.addEventListener('click',function(){
+        j=2;
+        b=Math.floor(Math.random()*(3)+1);
+        document.getElementById('blanco1').src="papel.png";
+        bot(b);
+        setTimeout(function(){
+            comparar(j,b);   
+        }, 100);
+    });
+    i3.addEventListener('click',function(){
+        j=3;
+        b=Math.floor(Math.random()*(3)+1);
+        document.getElementById('blanco1').src="tijeras.png";
+        bot(b);
+        setTimeout(function(){
+            comparar(j,b);   
+        }, 100);
+    });
+</script>
+</html>
